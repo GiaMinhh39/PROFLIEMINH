@@ -1,0 +1,195 @@
+/* Cài đặt chung */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  perspective: 1200px;
+  overflow-x: hidden;
+}
+
+/* Navbar dropdown dạng ba chấm */
+.navbar {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 20;
+}
+
+.menu-toggle {
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  font-size: 30px;
+  padding: 5px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.menu-toggle:hover {
+  transform: scale(1.2);
+}
+
+.dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  min-width: 200px;
+  box-shadow: 0 0 15px rgba(0,255,255,0.3);
+}
+
+.dropdown.active {
+  display: flex;
+}
+
+.dropdown li {
+  padding: 12px 20px;
+  cursor: pointer;
+  list-style: none;
+  color: white;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s;
+}
+
+.dropdown li:hover {
+  background: #00ffff;
+  color: black;
+}
+
+/* Hiệu ứng section 3D */
+.section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  padding: 140px 40px 60px;
+  transform: rotateY(5deg) scale(0.98);
+  transform-style: preserve-3d;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  z-index: 0;
+}
+
+.section.active {
+  visibility: visible;
+  pointer-events: auto;
+  opacity: 1;
+  transform: rotateY(0deg) scale(1);
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Giới thiệu */
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+
+.profile-left {
+  flex: 1;
+  transform: rotateY(-10deg);
+}
+
+.profile-left .avatar {
+  width: 200px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0,255,255,0.4);
+}
+
+.summary {
+  margin-top: 15px;
+  font-style: italic;
+}
+
+.profile-right {
+  flex: 2;
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+  transform: rotateY(10deg);
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  color: #fff;
+  background: #222;
+  padding: 10px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.2) rotateZ(15deg);
+  background: #00ffff;
+  color: #000;
+}
+
+h2 {
+  border-bottom: 2px solid #00ffff;
+  padding-bottom: 10px;
+}
+
+.skills-list li,
+.experience-item,
+.contact-form,
+section p,
+section ul {
+  transform: translateZ(30px);
+}
+
+/* Biểu mẫu liên hệ */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+}
+
+.contact-form button {
+  background: #00ffff;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  transform: scale(1.1) rotateX(10deg);
+}
+
+/* Nút quay lại */
+.back-button {
+  margin-top: 40px;
+  background: #454a5a;
+  color: black;
+  border: none;
+  padding: 10px 25px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+back-button:hover {
+  transform: scale(1.1) rotate(-2deg);
+}
